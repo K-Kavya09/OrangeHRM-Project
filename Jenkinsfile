@@ -1,21 +1,19 @@
 pipeline {
-    agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-        stage('Install Dependencies') {
-            steps {
-                bat 'npm install'
-            }
-        }
-        stage('Run Tests') {
-            steps {
-                bat 'npx playwright test'
-            }
-        }
+  agent any
+ 
+  stages {
+    stage('Install dependencies') {
+      steps {
+        bat 'npm install'
+        bat 'npx.cmd playwright install'
+      }
     }
+ 
+    stage('Run Playwright tests') {
+      steps {
+        bat 'npx.cmd playwright test'
+      }
+    }
+  }
 }
  
