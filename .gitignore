@@ -7,4 +7,5 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 /.env
-/rtfgh
+/allure-results/
+/allure-report/
