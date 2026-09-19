@@ -9,11 +9,9 @@ test.describe('Orange HRM demo automation testing', () => {
 
     // Open OrangeHRM Login Page
     await loginPage.open();
-
     // Login
     await loginPage.login(username, password);
-    // await page.waitForTimeout(2000);
-
+  
     // Verify Dashboard page
     await expect(page).toHaveURL(/dashboard/);
   });
@@ -50,7 +48,6 @@ test.describe('Orange HRM demo automation testing', () => {
 
     await loginPage.enterComment('Sample attachment');
 
-    await loginPage.saveAttachment();
-
+    await loginPage.saveAttachment();    
   });
 });
